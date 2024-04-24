@@ -14,11 +14,19 @@ public partial class MainPage : ContentPage
 		InitializeComponent();
 		this.userDialogs = userDialogs;
         this.viewModels = viewModel;
-        GetFCMToken();
-
+        GetFirebaseToken();
+        CrossFirebaseCloudMessaging.Current.NotificationTapped += delegate
+        {
+            NotificationHasTapped();
+        };
     }
 
-    private async void GetFCMToken()
+    private void NotificationHasTapped()
+    {
+       
+    }
+
+    private async void GetFirebaseToken()
     {
         await CrossFirebaseCloudMessaging.Current.CheckIfValidAsync();
         var token = await CrossFirebaseCloudMessaging.Current.GetTokenAsync();

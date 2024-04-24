@@ -7,6 +7,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Maui.LifecycleEvents;
 using Plugin.Firebase.Auth;
 using Plugin.Firebase.Bundled.Shared;
+using Plugin.Firebase.CloudMessaging;
+
 #if IOS
 using Plugin.Firebase.Bundled.Platforms.iOS;
 #else
@@ -58,8 +60,10 @@ public static class MauiProgram
         builder.Logging.AddDebug();
 #endif
 
-		return builder.Build();
+   
+        return builder.Build();
 	}
+
     private static MauiAppBuilder RegisterFirebaseServices(this MauiAppBuilder builder)
     {
         builder.ConfigureLifecycleEvents(events => {

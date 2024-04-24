@@ -14,7 +14,10 @@ public partial class MainPage : ContentPage
 		InitializeComponent();
 		this.userDialogs = userDialogs;
         this.viewModels = viewModel;
+        //Get firebased token ID
         GetFirebaseToken();
+
+        //push notification tapped event
         CrossFirebaseCloudMessaging.Current.NotificationTapped += delegate
         {
             NotificationHasTapped();

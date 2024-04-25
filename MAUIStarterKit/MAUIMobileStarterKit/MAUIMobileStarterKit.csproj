@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net7.0-ios;net7.0-android33.0</TargetFrameworks>
+		<TargetFrameworks>net7.0-ios;net7.0-android</TargetFrameworks>
     <!-- <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks> -->
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
@@ -60,7 +60,7 @@
 	<ItemGroup>
 	  <None Remove="Interface\" />
 	  <None Remove="Platforms\Android\Resources\values\string.xml" />
-	  <None Remove="Platforms\google-services.json" />
+
 	  <None Remove="Screens\" />
 	  <None Remove="Utilities\" />
 	  <None Remove="ViewModels\" />
@@ -73,7 +73,7 @@
 	  <Folder Include="Utilities\" />
 	  <Folder Include="ViewModels\" />
 	</ItemGroup>
-	<ItemGroup>
+	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
 	  <GoogleServicesJson Include="Platforms\google-services.json" />
 	</ItemGroup>
 </Project>

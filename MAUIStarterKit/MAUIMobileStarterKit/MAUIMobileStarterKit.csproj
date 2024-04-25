@@ -74,6 +74,11 @@
 	  <Folder Include="ViewModels\" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
-	  <GoogleServicesJson Include="Platforms\google-services.json" />
+	  <GoogleServicesJson Include="Platforms\Android\google-services.json" />
 	</ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net7.0-ios'">
+    <GoogleServicesJson Include="Platforms\iOS\Info.plist" />
+  </ItemGroup>
+  
 </Project>

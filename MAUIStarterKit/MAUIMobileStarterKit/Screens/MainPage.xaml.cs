@@ -40,10 +40,8 @@ public partial class MainPage : ContentPage
         base.OnAppearing();
     }
 
-   async void Button_Clicked_1(System.Object sender, System.EventArgs e)
+   public void ButtonClicked(System.Object sender, System.EventArgs e)
     {
-        viewModels.StartLoading();
-        await Task.Delay(3000);
-        viewModels.EndLoading();
+       
     }
 }

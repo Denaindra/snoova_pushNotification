@@ -9,7 +9,7 @@
             Text="Welcome to .NET MAUI!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-             <Button Text="Start" Clicked="Button_Clicked_1" />
+        <Button Text="Start" Clicked="ButtonClicked" />
         <Entry Text="hellow words" BackgroundColor="Green" WidthRequest="200" />
     </VerticalStackLayout>
 </ContentPage>

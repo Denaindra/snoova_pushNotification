@@ -3,7 +3,7 @@
   <PropertyGroup>
     <IsFirstTimeProjectOpen>False</IsFirstTimeProjectOpen>
     <ActiveDebugProfile>Samsung SM-E546B (Android 13.0 - API 33)</ActiveDebugProfile>
-    <ActiveDebugFramework>net7.0-android</ActiveDebugFramework>
+    <ActiveDebugFramework>net8.0-android</ActiveDebugFramework>
     <SelectedPlatformGroup>PhysicalDevice</SelectedPlatformGroup>
   </PropertyGroup>
   <PropertyGroup Condition="'$(TargetPlatformIdentifier)'=='iOS'">

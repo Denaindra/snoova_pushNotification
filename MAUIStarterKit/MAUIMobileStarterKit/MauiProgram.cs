@@ -28,9 +28,9 @@ public static class MauiProgram
             .UseUserDialogs(true, () =>
             {
 #if ANDROID
-                var fontFamily = "OpenSans-Default.ttf";
+                var fontFamily = "OpenSans-Regular.ttf";
 #else
-                    var fontFamily = "OpenSans-Regular";
+                var fontFamily = "OpenSans-Regular";
 #endif
                 AlertConfig.DefaultMessageFontFamily = fontFamily;
                 AlertConfig.DefaultUserInterfaceStyle = UserInterfaceStyle.Dark;

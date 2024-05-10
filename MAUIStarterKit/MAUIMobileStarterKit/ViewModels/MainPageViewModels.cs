@@ -7,9 +7,11 @@ namespace MAUIMobileStarterKit.ViewModels
 	public class MainPageViewModels: BaseViewModel
     {
         private readonly ILoading loading;
-        public MainPageViewModels(ILoading loading)
+        private readonly IRunTimeNotificationChanel notificationChanell;
+        public MainPageViewModels(ILoading loading, IRunTimeNotificationChanel notificationChanell)
 		{
             this.loading = loading;
+            this.notificationChanell = notificationChanell;
 		}
 
         public void StartLoading()
@@ -20,6 +22,11 @@ namespace MAUIMobileStarterKit.ViewModels
         public void EndLoading()
         {
             loading.EndIndiCator();
+        }
+
+        public void GetNotification()
+        {
+            notificationChanell.CreateRunTimeNotificationChannel();
         }
     }
 }

@@ -42,6 +42,6 @@ public partial class MainPage : ContentPage
 
    public void ButtonClicked(System.Object sender, System.EventArgs e)
     {
-       
+        viewModels.GetNotification();
     }
 }

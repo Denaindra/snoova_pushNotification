@@ -1,5 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
+using MAUIMobileStarterKit.Interface;
+using MAUIMobileStarterKit.Platforms.Android;
 
 namespace MAUIMobileStarterKit;
 
@@ -11,6 +13,11 @@ public class MainApplication : MauiApplication
 	{
 	}
 
-	protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
+    protected override MauiApp CreateMauiApp()
+    {
+        var builder = MauiApp.CreateBuilder();
+        builder.Services.AddSingleton<IRunTimeNotificationChanel, RunTimeNotificationChanel>();
+        return MauiProgram.CreateMauiApp(builder);
+    }
 }
 

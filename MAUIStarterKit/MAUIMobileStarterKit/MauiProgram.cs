@@ -19,9 +19,9 @@ using Plugin.Firebase.Bundled.Platforms.Android;
 namespace MAUIMobileStarterKit;
 public static class MauiProgram
 {
-    public static MauiApp CreateMauiApp()
+    public static MauiApp CreateMauiApp(MauiAppBuilder builder)
     {
-        var builder = MauiApp.CreateBuilder();
+       // var builder = MauiApp.CreateBuilder();
         builder
 			.UseMauiApp<App>()
             .RegisterFirebaseServices()

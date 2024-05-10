@@ -27,7 +27,7 @@ public class MainActivity : MauiAppCompatActivity
     }
     private void CreateNotificationChannelIfNeeded()
     {
-        if (Build.VERSION.SdkInt >= BuildVersionCodes.O)
+        if (Build.VERSION.SdkInt < BuildVersionCodes.Tiramisu)
         {
             CreateNotificationChannel();
         }

@@ -15,7 +15,7 @@
 		<ApplicationTitle>MAUIMobileStarterKit</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.mauimobilestarterkit</ApplicationId>
+		<ApplicationId>WorkBook.General.NOV272013</ApplicationId>
 		<ApplicationIdGuid>ad8075d5-8e61-405c-8f36-1421276bd4dc</ApplicationIdGuid>
 
 		<!-- Versions -->
@@ -31,6 +31,14 @@
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-ios|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	  <CodesignProvision>iOS Team Provisioning Profile: WorkBook.General.NOV272013</CodesignProvision>
+	  <CodesignKey>Apple Development: gayan perera (TNGXA3695G)</CodesignKey>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
 	</PropertyGroup>
 	<ItemGroup>
@@ -64,6 +72,7 @@
 	  <None Remove="Screens\" />
 	  <None Remove="Utilities\" />
 	  <None Remove="ViewModels\" />
+	  <None Remove="GoogleService-Info.plist" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Platforms\Android\Renders\" />
@@ -76,8 +85,7 @@
 	  <GoogleServicesJson Include="Platforms\Android\google-services.json" />
 	</ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net8.0-ios'">
-    <GoogleServicesJson Include="Platforms\iOS\Info.plist" />
-  </ItemGroup>
-  
+	<ItemGroup Condition="'$(TargetFramework)' == 'net8.0-ios'">
+	  <BundleResource Include="GoogleService-Info.plist" />
+	</ItemGroup>
 </Project>

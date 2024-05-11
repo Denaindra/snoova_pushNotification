@@ -29,6 +29,6 @@
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/appicon.appiconset</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.pushNotification.ios</string>
+	<string>WorkBook.General.NOV272013</string>
 </dict>
 </plist>

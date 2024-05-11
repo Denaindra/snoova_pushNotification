@@ -9,7 +9,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.pushNotification.ios</string>
+	<string>WorkBook.General.NOV272013</string>
 	<key>PROJECT_ID</key>
 	<string>pushnotification-b28b5</string>
 	<key>STORAGE_BUCKET</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:343985755625:ios:323b8f6e6b7fc671aea778</string>
+	<string>1:343985755625:ios:00bb1703acaf0495aea778</string>
 </dict>
 </plist>

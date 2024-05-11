@@ -14,34 +14,39 @@ public partial class MainPage : ContentPage
 		InitializeComponent();
 		this.userDialogs = userDialogs;
         this.viewModels = viewModel;
-        //Get firebased token ID
-        GetFirebaseToken();
-
+ 
         //push notification tapped event
         CrossFirebaseCloudMessaging.Current.NotificationTapped += delegate
         {
             NotificationHasTapped();
         };
     }
-
+   
     private void NotificationHasTapped()
     {
        
     }
 
-    private async void GetFirebaseToken()
-    {
-        await CrossFirebaseCloudMessaging.Current.CheckIfValidAsync();
-        var token = await CrossFirebaseCloudMessaging.Current.GetTokenAsync();
-        Console.WriteLine($"FCM token: {token}");
-    }
     protected override void OnAppearing()
     {
+        //Get firebased token ID
+        EnableCouldMessagingFacilities();
         base.OnAppearing();
     }
 
-   public void ButtonClicked(System.Object sender, System.EventArgs e)
+    private async void EnableCouldMessagingFacilities()
     {
-        viewModels.GetNotification();
+        await CrossFirebaseCloudMessaging.Current.CheckIfValidAsync();
+    }
+
+    public async void ButtonClicked(System.Object sender, System.EventArgs e)
+    {
+        var token = await CrossFirebaseCloudMessaging.Current.GetTokenAsync();
+        Console.WriteLine($"FCM token: {token}");
+
+        if(DeviceInfo.Current.Platform == DevicePlatform.Android)
+        {
+            viewModels.GetNotification();
+        }
     }
 }

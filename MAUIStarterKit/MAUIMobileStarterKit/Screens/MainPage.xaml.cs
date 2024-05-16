@@ -30,8 +30,12 @@ public partial class MainPage : ContentPage
     protected override void OnAppearing()
     {
         //Get firebased token ID
-        EnableCouldMessagingFacilities();
+        if (DeviceInfo.Current.Platform == DevicePlatform.Android)
+        {
+            EnableCouldMessagingFacilities();
+        }
         base.OnAppearing();
+
     }
 
     private async void EnableCouldMessagingFacilities()
@@ -47,6 +51,10 @@ public partial class MainPage : ContentPage
         if(DeviceInfo.Current.Platform == DevicePlatform.Android)
         {
             viewModels.GetNotification();
+        }
+        else
+        {
+          EnableCouldMessagingFacilities();
         }
     }
 }
